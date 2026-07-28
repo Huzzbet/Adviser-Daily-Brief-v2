@@ -1,1 +1,55 @@
 /* Adviser Daily Brief Styles */
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#0f172a;
+    color:white;
+}
+
+header{
+    background:#111827;
+    padding:30px;
+    text-align:center;
+    border-bottom:1px solid #2d3748;
+}
+
+header h1{
+    margin:0;
+    font-size:34px;
+}
+
+header p{
+    color:#94a3b8;
+}
+
+main{
+
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+
+    display:grid;
+    gap:20px;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(320px,1fr));
+
+}
+
+.card{
+
+    background:#1e293b;
+
+    border-radius:12px;
+
+    padding:20px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.3);
+
+}
+
+.card h2{
+
+    margin-top:0;
+
+}
