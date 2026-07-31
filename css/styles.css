@@ -57,4 +57,11 @@ main{
 
 }
 
+.card:hover{
+
+    transform:translateY(-3px);
+
+    transition:.3s;
+
+}
 }
