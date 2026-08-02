@@ -1,4 +1,5 @@
 // Adviser Daily Brief Application
+
 console.log("Adviser Daily Brief Loaded");
 
 function updateClock() {
@@ -20,10 +21,6 @@ function updateClock() {
 
 }
 
-updateClock();
-
-setInterval(updateClock,1000);
-
 function updateMarketStatus(){
 
     const now = new Date();
@@ -37,7 +34,7 @@ function updateMarketStatus(){
     const currentTime = hour + minute/60;
 
     const market =
-        (day>=1 && day<=5 && currentTime>=10 && currentTime<16)
+        (day >= 1 && day <= 5 && currentTime >= 10 && currentTime < 16)
             ? "🟢 ASX Open"
             : "🔴 ASX Closed";
 
@@ -45,14 +42,14 @@ function updateMarketStatus(){
 
 }
 
+// Run immediately
 updateClock();
-
 updateMarketStatus();
 
-setInterval(function(){
+// Update every second
+setInterval(() => {
 
     updateClock();
-
     updateMarketStatus();
 
-},1000);
+}, 1000);
