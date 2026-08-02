@@ -23,3 +23,24 @@ function updateClock() {
 updateClock();
 
 setInterval(updateClock,1000);
+
+function updateMarketStatus(){
+
+    const now = new Date();
+
+    const day = now.getDay();
+
+    const hour = now.getHours();
+
+    const minute = now.getMinutes();
+
+    const currentTime = hour + minute/60;
+
+    const market =
+        (day>=1 && day<=5 && currentTime>=10 && currentTime<16)
+            ? "🟢 ASX Open"
+            : "🔴 ASX Closed";
+
+    document.getElementById("marketStatus").textContent = market;
+
+}
