@@ -44,3 +44,15 @@ function updateMarketStatus(){
     document.getElementById("marketStatus").textContent = market;
 
 }
+
+updateClock();
+
+updateMarketStatus();
+
+setInterval(function(){
+
+    updateClock();
+
+    updateMarketStatus();
+
+},1000);
