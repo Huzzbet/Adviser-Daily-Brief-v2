@@ -53,3 +53,35 @@ setInterval(() => {
     updateMarketStatus();
 
 }, 1000);
+
+async function loadRBA() {
+
+    const container = document.getElementById("rbaData");
+
+    try {
+
+        container.innerHTML = "Loading...";
+
+        // Replace this URL later with your own API or Cloudflare Worker
+        const response = await fetch("YOUR_API_URL");
+
+        const data = await response.json();
+
+        container.innerHTML = `
+            <p><strong>Cash Rate:</strong> ${data.cashRate}%</p>
+            <p><strong>Next Meeting:</strong> ${data.nextMeeting}</p>
+            <p><strong>Decision:</strong> ${data.decision}</p>
+        `;
+
+    } catch (error) {
+
+        console.error(error);
+
+        container.innerHTML =
+            "Unable to load RBA data.";
+
+    }
+
+}
+
+loadRBA();
