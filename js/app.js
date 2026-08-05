@@ -60,12 +60,9 @@ async function loadRBA() {
 
     try {
 
-        container.innerHTML = "Loading...";
-
-        // Replace this URL later with your own API or Cloudflare Worker
         const response = await fetch(
-    "https://adviser-daily-brief-v2.seanhurren.workers.dev"
-);
+            "https://adviser-api.seanhurren.workers.dev"
+        );
 
         const data = await response.json();
 
